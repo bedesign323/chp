@@ -1,0 +1,550 @@
+@import "compass";
+@import "_reset";
+@import "_fonts";
+@import "_icons";
+@import "_base";
+
+/* BASIC STYLES
+-------------------------------------------------------------- */
+*{
+  @include box-sizing('border-box');
+
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+body{
+  font: 16px/1.5 $font_main;
+  background-color: $page_bg;  
+  color: $color_main;
+}
+
+a{
+  @include transition;
+  color: $color_main;
+  text-decoration: none;
+  
+  &:hover{
+    color: $color_accent;
+    
+  }
+}
+
+p{
+  
+}
+
+ul,
+ul.menu,
+ul.menu li{
+  list-style: none;
+  text-align: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+li a.active,
+li.opened span.nolink{color: $color_main;}
+
+/* Layout
+-------------------------------------------------------------- */
+#header-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 900;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 20px;
+  
+  @include bp(m){
+    position: relative;
+  }
+
+}
+
+#logo{
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  float: left;
+  margin-right: 10px;
+
+  a{
+    background-color: $color_accent;
+    height: 50px;
+    line-height: 47px;
+    padding: 0 20px;
+    display: block;
+    color: #fff;
+
+    &:hover{
+      background-color: #fff;
+      color: $color_accent;
+    }
+  }
+}
+
+.region-nav-main{
+  float: right;
+  font-size: .8em;
+
+  @include bp(m){
+    float: none;
+  }
+}
+.social-icons{
+  float: right;
+
+  @include bp(m){
+    float: none;
+  }
+}
+
+#main-nav{
+  @include pie-clearfix;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: rgba(darken($page_bg, 5%), .9);
+
+	ul{}
+
+	li{
+    display: inline-block;
+    margin-right: 20px;
+
+  }
+
+	a{
+
+		&:hover{}
+
+		&.active{
+      color: $color_accent;
+    }
+	}
+
+  @include bp(m){
+    text-align: center;
+
+    ul{
+      text-align: center !important;
+    }
+
+    li{
+      display: block;
+      margin-bottom: 10px;
+      margin-right: 0;
+    }
+  }
+}
+
+#menu{
+  display: block;
+
+  @include bp(m){
+    display: none;
+  }
+}
+
+.menu-toggle{
+  @include transition;
+  display: none;
+  position: fixed;
+  z-index: 900;
+  top: 0;
+  right: 20px;
+  background-color: $color_accent;
+  color: $page_bg;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 47px;
+  font-size: 2em;
+  cursor: pointer;
+
+  &:hover{
+    background-color: $color_main;
+  }
+
+  @include bp(m){
+    display: block;
+  }
+}
+
+#main-container{
+  margin-top: 70px;
+}
+
+html{
+  height: 100%;
+}
+.front{
+  height: 100%;
+  position: relative;
+  width: 100%;
+
+  #main-container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0;
+  }
+
+  #footer-container{
+    position: relative;
+  }
+}
+
+#footer-container{
+  position: relative;
+  padding: 0 20px;
+  font-size: .8em;
+
+  #footer{
+    @include pie-clearfix;
+    background-color: rgba(darken($page_bg, 50%), .9);
+    color: $page_bg;
+  }
+
+  .logo-big{
+    float: left;
+    margin-right: 20px;
+  }
+
+  .footer-left{
+    float: left;
+    width: 50%;
+    padding: 20px;
+  }
+
+  .copy{
+    clear: both;
+    background-color: darken($page_bg, 60%);
+    padding: 20px;
+    text-align: center;
+    font-size: .7em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+}
+
+.region-footer-left{
+  margin-left: 220px;
+}
+
+.logo-big{
+  width: 200px;
+
+  img{
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+.view-image-galleries{
+  padding-left: 20px;
+
+    .views-row{
+      float: left;
+      width: 25%;
+      padding: 0 20px 20px 0;
+
+      @include bp(m){
+        width: 33.33%;
+      }
+    }
+
+    .views-field-title{
+      text-transform: uppercase;
+      font-size: .8em;
+      letter-spacing: 1px;
+    }
+
+    .field-name-field-cover-image{
+      line-height: 0;
+
+      a{
+        line-height: 0;
+        display: block;
+      }
+    }
+}
+
+/* IMAGE GALLERY
+-------------------------------------------------------------- */
+.gallery{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+
+  .images{
+    ul{
+      margin: 0 !important;
+    }
+
+    li{
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      cursor: pointer;
+      margin: 0;
+      padding: 5%;
+      height: 100%;
+      display: block;
+
+      .image-group,
+      .single-image{
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      img{
+        display: inline-block;
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        max-height: 100%;
+      }
+
+      @include bp(m){
+        position: relative !important;
+        top: auto;
+        left: auto;
+        height: auto;
+        padding: 2px 10px;
+        display: block !important;
+
+        img{
+          margin-top: 0 !important;
+        }
+      }
+    }
+  
+  .captions{
+    @include pie-clearfix;
+    font-size: .7em;
+    text-align: center;
+    margin: auto;
+
+    .caption{
+      text-align: left;
+    }
+    
+    .c-left{
+      float: left;
+    }
+
+    .c-right{
+      float: right;
+    }
+
+    @include bp(m){
+      margin-bottom: 20px;
+    }
+
+  }
+    
+    
+  }
+}
+
+#controls{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  line-height: $body_pad;
+
+  .item-next,
+  .item-last{
+    @include inline-block;
+    @include transition;
+    cursor: pointer;
+    position: relative;
+    background-color: darken($page_bg, 10%);
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+
+    &:hover{
+      background-color: $color_accent;
+    };
+  }
+
+  .item-last{
+    background-position: -15px 0;
+  }
+
+  @include bp(m){
+    display: none !important;
+  }
+}
+
+.extras{
+   @include inline-block;
+   background-color: darken($page_bg, 5%);
+   height: 40px;
+    text-align: center;
+    line-height: 35px;
+    padding: 0 20px;
+}
+
+.image-count{
+  @include inline-block;
+  text-transform: uppercase;
+  font-size: .8em;
+  letter-spacing: 1px;
+}
+
+.thumbs-btn,
+.details-btn{
+  @include inline-block;
+  @include transition;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: .8em;
+  letter-spacing: 1px;
+  margin-left: 20px;
+
+  &:hover{
+    color: $color_accent;
+  } 
+}
+
+.is-thumb{
+  height: auto;
+  text-align: center;
+  margin-top: 70px;
+  padding: 0 20px;
+
+  .images{
+    max-width: 1200px;
+    margin: auto;
+
+    ul{
+      margin: 0 !important;
+    }
+
+    li{
+      display: inline-block !important;
+      position: relative !important;
+      top: auto;
+      left: auto;
+      width: auto;
+      height: 230px;
+      text-align: center;
+      cursor: pointer;
+      margin: 0;
+      padding: 0;
+
+      img{
+        padding: 10px;
+        width: auto;
+        max-width: 100%;
+        height: 100%;
+        max-height: 100%;
+        margin-top: 0 !important;
+      }
+    }
+    
+  }
+
+
+
+  #controls,
+  .captions{
+    display: none !important;
+  }
+}
+
+
+.details-holder{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 900;
+
+  .overlay{
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(darken($page_bg, 30%), .9);
+    z-index: 1;
+  }
+
+  .details{
+    @include single-box-shadow(0, 0, 10px, 0, #888);
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 400px;
+    margin: -200px 0 0 -250px;
+    padding: 40px;
+    background-color: $page_bg;
+    
+
+    h1{
+      font-size: 1.2em;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .body{
+      font-size: .8em;
+      text-align: justify;
+    }
+
+    .close-btn{
+      @include transition;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: $color_accent;
+      padding: 10px 20px 15px;
+      color: #fff;
+      cursor: pointer;
+
+      &:hover{
+        background-color: #fff;
+        color: $color_accent;
+      }
+    }
+  }
+}
+
+.krumo-root{
+  z-index: 1000;
+}
+
+.service-links{
+
+  li{
+    @include inline-block;
+  }
+}
+
+
+
+
+
