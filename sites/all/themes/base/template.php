@@ -37,6 +37,14 @@ function base_preprocess_node(&$vars){
 	$vars['tags'] =  render($vars['content']['field_tags']);
 	$vars['service_links'] = render($vars['content']['service_links']);
 	$vars['video'] = render($vars['content']['field_video_url']);
+
+	if(isset($vars['field_background_image'][0])){
+		$bg_image = file_create_url($vars['field_background_image'][0]['uri']);
+
+		drupal_add_js(array('bg_image' => $bg_image), 'setting');
+		drupal_add_js(path_to_theme() . '/js/jquery.backstretch.min.js');
+		drupal_add_js(path_to_theme() . '/js/bg-image.js');
+	}
 	
 	if($vars['view_mode'] == 'teaser'){
 		$vars['title'] = l(html_entity_decode($vars['title']), $url, array('html' => TRUE));
@@ -144,6 +152,33 @@ function base_preprocess_node(&$vars){
 
 		//kpr($intro_images);
 	}
+
+	if($vars['vid'] == 13){
+		$vars['theme_hook_suggestions'][] = 'node__grid';
+		$images = array();
+
+		for($i = 0; $i < count($vars['field_other_images']); $i++){
+			$image = render_image($vars['field_other_images'][$i], 'image_grid');
+			if(isset($vars['field_other_images'][$i]['title']) && $vars['field_other_images'][$i]['title'] != ''){
+				$caption = '<div class="captions"><div class="caption">' . $vars['field_other_images'][$i]['title'] . '</div></div>';
+			   $images[] = '<div class="single-image">' . $image . $caption . '</div>';
+			}else{
+				$images[] = '<div class="single-image">' . $image . '</div>';
+			}
+			
+		}
+
+		$vars['images'] = theme_item_list(array(
+		   	'items' => $images, 
+		   	'title' => null,
+		   	'type' => 'ul', 
+		   	'attributes' => array(),
+		   	)
+		   );
+
+	}
+
+	//kpr($vars);
 	
 }
 

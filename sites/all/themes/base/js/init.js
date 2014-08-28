@@ -12,14 +12,14 @@ Drupal.behaviors.init = {
 
 
  			// MASONRY!!!
- 			//===================================
-			// var masonry_container = $('.node-image-gallery .field-name-field-other-images');
+ 			// ===================================
+			var masonry_container = $('.image-grid');
 			
-			// masonry_container.imagesLoaded(function(){
-			// 	masonry_container.masonry({
-			// 	  itemSelector: '.field-item'
-			// 	});
-			// });
+			masonry_container.imagesLoaded(function(){
+				masonry_container.masonry({
+				  itemSelector: 'li'
+				});
+			});
 
 
 			// SKROLR!!!

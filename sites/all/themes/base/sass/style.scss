@@ -19,6 +19,16 @@ body{
   font: 16px/1.5 $font_main;
   background-color: $page_bg;  
   color: $color_main;
+  min-height: 100%;
+
+  &.page-gallery{
+    height: 100%;
+  }
+
+  @include bp(s){
+    height: auto;
+    min-height: auto;
+  }
 }
 
 a{
@@ -59,11 +69,10 @@ li.opened span.nolink{color: $color_main;}
   height: 50px;
   line-height: 50px;
   padding: 0 20px;
-  
-  @include bp(m){
-    position: relative;
-  }
 
+  @include bp(s){
+    padding: 0;
+  }
 }
 
 #logo{
@@ -85,6 +94,11 @@ li.opened span.nolink{color: $color_main;}
       color: $color_accent;
     }
   }
+
+  @include bp(s){
+    font-size: .7em;
+    letter-spacing: 1px;
+  }
 }
 
 .region-nav-main{
@@ -96,7 +110,7 @@ li.opened span.nolink{color: $color_main;}
   }
 }
 .social-icons{
-  float: right;
+  font-size: 2em;
 
   @include bp(m){
     float: none;
@@ -131,13 +145,26 @@ li.opened span.nolink{color: $color_main;}
 
     ul{
       text-align: center !important;
+      padding-top: 50px;
     }
 
     li{
       display: block;
-      margin-bottom: 10px;
       margin-right: 0;
+      line-height: normal;
+
+      a{
+        display: block;
+        padding: 10px 0;
+        border-bottom: $page_bg solid 2px;
+      }
     }
+  }
+
+  @include bp(s){
+    background-color: darken($page_bg, 10%);
+
+
   }
 }
 
@@ -172,10 +199,27 @@ li.opened span.nolink{color: $color_main;}
   @include bp(m){
     display: block;
   }
+
+  @include bp(s){
+    right: 0;
+  }
 }
 
+
 #main-container{
+  @include pie-clearfix;
   margin-top: 70px;
+  height: 100%;
+
+  @include bp(s){
+    height: auto;
+    min-height: auto;
+  }
+
+}
+
+.main{
+  @include pie-clearfix;
 }
 
 html{
@@ -205,6 +249,12 @@ html{
   padding: 0 20px;
   font-size: .8em;
 
+  .inner{
+    @include pie-clearfix;
+    max-width: 1080px;
+    margin: auto;
+  }
+
   #footer{
     @include pie-clearfix;
     background-color: rgba(darken($page_bg, 50%), .9);
@@ -217,9 +267,43 @@ html{
   }
 
   .footer-left{
+    @include pie-clearfix;
+    text-align: justify;
     float: left;
-    width: 50%;
+    width: 70%;
     padding: 20px;
+  }
+
+  
+
+  .footer-right{
+    @include pie-clearfix;
+    float: right;
+    text-align: right;
+    padding: 20px;
+    width: 30%;
+
+    h2{
+      text-transform: uppercase;
+      font-size: 1.3em;
+      letter-spacing: 2px;
+    }
+
+    a{
+      color: #fff;
+
+      &:hover{
+        color: $color_accent;
+      }
+    }
+  }
+
+  .social-icons{
+    font-size: 2.3em;
+    a{
+      margin: 0;
+      margin-left: 10px;
+    }
   }
 
   .copy{
@@ -231,10 +315,57 @@ html{
     text-transform: uppercase;
     letter-spacing: 2px;
   }
+
+  @include bp(m){
+    padding: 0 10px;
+
+    .footer-left,
+    .footer-right{
+      margin: 0;
+      float: none;
+      width: 100%;
+    }
+ 
+    .footer-right{
+      text-align: center;
+    }
+  }
+
+  @include bp(s){
+    .footer-left,
+    .footer-right,
+    .logo-big{
+      margin: 0;
+      float: none;
+      width: 100%;
+      clear: both;
+    }
+ 
+    .footer-right{
+      text-align: center;
+    }
+  }
+}
+
+.not-front.node-type-image-gallery{
+  #footer-container{
+    display: none;
+
+    @include bp(m){
+      display: block; 
+    }
+  }
+
+
 }
 
 .region-footer-left{
   margin-left: 220px;
+  padding-top: 50px;
+
+  @include bp(s){
+    margin: 0;
+  }
 }
 
 .logo-big{
@@ -250,31 +381,116 @@ html{
 .view-image-galleries{
   padding-left: 20px;
 
-    .views-row{
-      float: left;
-      width: 25%;
-      padding: 0 20px 20px 0;
+  .views-row{
+    float: left;
+    width: 25%;
+    padding: 0 20px 20px 0;
 
-      @include bp(m){
-        width: 33.33%;
-      }
+    @include bp(m){
+      width: 33.33%;
     }
 
-    .views-field-title{
-      text-transform: uppercase;
-      font-size: .8em;
-      letter-spacing: 1px;
+    @include bp(s){
+      width: 100%;
+      padding: 0 10px 20px;
     }
+  }
 
-    .field-name-field-cover-image{
+  .views-field-title{
+    text-transform: uppercase;
+    font-size: .8em;
+    letter-spacing: 1px;
+  }
+
+  .field-name-field-cover-image{
+    line-height: 0;
+
+    a{
       line-height: 0;
+      display: block;
+    }
+  }
+  
+  @include bp(s){
+    padding: 0;
+  }
+  
+}
 
-      a{
-        line-height: 0;
-        display: block;
+
+.node-type-page{
+  height: 100%;
+  position: relative;
+
+  #main-container{
+    position: relative;
+    height: 100%;
+  }
+
+  .main{
+    background-color: rgba($page_bg, .9);
+    max-width: 700px;
+    padding: 40px;
+    margin: 80px auto;
+
+    h2{
+      font-size: 1.5em;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    a{
+      color: $color_accent;
+
+      &:hover{
+        color: $color_main;
       }
     }
+  }
+
+  @include bp(s){
+    height: auto;
+    min-height: auto;
+  }
 }
+
+.page-node-3{
+
+  #main-container{
+  }
+
+  .main{
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    margin: -250px 0 0 -250px;
+
+    @include bp(s){
+      position: relative;
+      width: auto;
+      height: auto;
+      margin: 0;
+      top: auto;
+      left: auto;
+    }
+  }
+
+  .social-icons{
+
+    a{
+      @include inline-block;
+      margin: 0 5px;
+    }
+  }
+
+
+}
+
+
+
 
 /* IMAGE GALLERY
 -------------------------------------------------------------- */
@@ -533,6 +749,33 @@ html{
   }
 }
 
+.image-grid{
+  max-width: 1000px;
+  margin: auto;
+
+  li{
+    width: 33.3%;
+    padding: 5px !important;
+    margin: 0 !important;
+
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .single-image{
+    line-height: 0;
+  }
+
+  .caption{
+    line-height: normal;
+    background-color: darken($page_bg, 10%);
+    font-size: .7em;
+    padding: 5px;
+  }
+}
+
 .krumo-root{
   z-index: 1000;
 }
@@ -544,6 +787,45 @@ html{
   }
 }
 
+.panel-1col{
+  max-width: 1000px;
+  margin: auto;
+  padding-bottom: 80px;
+
+  h2{
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+  }
+
+  .pane-block{
+    margin-bottom: 80px;
+  }
+}
+
+.pane-block-4,
+.pane-block-5{
+  @include pie-clearfix;
+
+  li{
+    font-size: .8em;
+    float: left;
+    width: 33.33%;
+    margin-bottom: 10px;
+  }
+}
+
+.pane-block-5{
+  li{
+
+    width: 50%;
+  }
+}
+
+.pane-node{
+  clear: both;
+}
 
 
 
