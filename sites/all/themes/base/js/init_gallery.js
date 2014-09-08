@@ -165,6 +165,7 @@ Drupal.behaviors.init_gallery = {
 			jQuery(document).keydown(function(e) {
 			    switch(e.which) {
 			        case 37: // left
+			        clearInterval(slide_show);
 			        lastItem();
 			        break;
 
@@ -172,6 +173,7 @@ Drupal.behaviors.init_gallery = {
 			        break;
 
 			        case 39: // right
+				        clearInterval(slide_show);
 				        nextItem();
 			        break;
 
@@ -222,7 +224,7 @@ Drupal.behaviors.init_gallery = {
 			function resizeStuff(){
 				win_w = win.width();
 
-				if( win_w > 700){
+				if( win_w > 1080){
 					var gh = jQuery('.gallery.full li').height();
 					jQuery('.gallery.full li img').each(function(index) {
 					   var $this = jQuery(this);
@@ -250,6 +252,7 @@ Drupal.behaviors.init_gallery = {
 					});
 				}else{
 					jQuery('.gallery.full li').css('display', 'block !important');
+					clearInterval(slide_show);
 				}
 			}
 
@@ -262,7 +265,7 @@ Drupal.behaviors.init_gallery = {
 
 			var slide_show;
 
-			if(autoplay == 1){
+			if(autoplay == 1 && win_w > 1080){
 				slide_show = setInterval(nextItem, 4000);
 			}
 

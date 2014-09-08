@@ -64,20 +64,20 @@ li.opened span.nolink{color: $color_main;}
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 900;
+  z-index: 100;
   width: 100%;
   height: 50px;
   line-height: 50px;
   padding: 0 20px;
 
-  @include bp(s){
+  @include bp(m){
     padding: 0;
   }
 }
 
 #logo{
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   float: left;
   margin-right: 10px;
 
@@ -95,6 +95,10 @@ li.opened span.nolink{color: $color_main;}
     }
   }
 
+  @include bp(l){
+    font-size: .8em !important;
+  }
+
   @include bp(s){
     font-size: .7em;
     letter-spacing: 1px;
@@ -108,6 +112,10 @@ li.opened span.nolink{color: $color_main;}
   @include bp(m){
     float: none;
   }
+
+  @include bp(l){
+    font-size: .7em !important;
+  }
 }
 .social-icons{
   font-size: 2em;
@@ -120,7 +128,7 @@ li.opened span.nolink{color: $color_main;}
 #main-nav{
   @include pie-clearfix;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0;
   background-color: rgba(darken($page_bg, 5%), .9);
 
 	ul{}
@@ -161,10 +169,10 @@ li.opened span.nolink{color: $color_main;}
     }
   }
 
+  
+
   @include bp(s){
     background-color: darken($page_bg, 10%);
-
-
   }
 }
 
@@ -200,7 +208,7 @@ li.opened span.nolink{color: $color_main;}
     display: block;
   }
 
-  @include bp(s){
+  @include bp(m){
     right: 0;
   }
 }
@@ -513,7 +521,7 @@ html{
       text-align: center;
       cursor: pointer;
       margin: 0;
-      padding: 5%;
+      padding: 80px 20px;
       height: 100%;
       display: block;
 
@@ -548,9 +556,10 @@ html{
   
   .captions{
     @include pie-clearfix;
-    font-size: .7em;
+    font-size: .6em;
     text-align: center;
     margin: auto;
+    text-transform: uppercase;
 
     .caption{
       text-align: left;
@@ -762,6 +771,12 @@ html{
       width: 100%;
       height: auto;
     }
+
+     @include bp(m){
+      width: 100%;
+      float: none;
+      padding: 0 0 10px !important;
+    }
   }
 
   .single-image{
@@ -773,6 +788,38 @@ html{
     background-color: darken($page_bg, 10%);
     font-size: .7em;
     padding: 5px;
+  }
+
+
+}
+
+
+#bg-images{
+
+  .controls{
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+    text-align: center;
+
+    span{
+      @include inline-block;
+      @include border-radius(10px);
+      @include transition;
+      border: #fff solid 1px;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+
+      &:hover{
+        background-color: rgba(#fff, .5);
+      }
+
+      &.active{
+        background-color: #fff;
+      }
+
+    }
   }
 }
 
@@ -797,11 +844,53 @@ html{
     text-transform: uppercase;
     font-size: 1.2em;
     letter-spacing: 2px;
+    text-align: left;
+  }
+
+  p{
+
   }
 
   .pane-block{
     margin-bottom: 80px;
   }
+
+  @include bp(m){
+    padding: 0 10px 80px;
+
+    p{
+      font-size: .8em;
+      text-align: left;
+    }
+
+    h2{
+      font-size: .9em;
+      letter-spacing: 1px;  
+    }
+
+    .pane-block{
+      margin-bottom: 40px;
+    }
+
+  }
+}
+
+.region-content .block-block{
+  padding: 20px 20px 40px;
+  max-width: 800px;
+  text-align: justify;
+
+  h2{
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+  }
+}
+
+
+.pane-block-3{
+  text-align: justify;
 }
 
 .pane-block-4,
@@ -813,13 +902,22 @@ html{
     float: left;
     width: 33.33%;
     margin-bottom: 10px;
+
+    @include bp(m){
+      width: 100%;
+      float: none;
+    }
   }
 }
 
 .pane-block-5{
   li{
-
     width: 50%;
+
+    @include bp(m){
+      width: 100%;
+      float: none;
+    }
   }
 }
 
@@ -827,6 +925,27 @@ html{
   clear: both;
 }
 
+#admin-list{
+  
+  h1{
+    font-size: 2em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
 
+  h2{
+    font-size: 1em;
+  }
 
+  ul{
+    margin-bottom: 40px;
+  }
+}
+
+.logged-in{
+
+  #header-container{
+    top: 100px;
+  }
+}
 

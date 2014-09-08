@@ -142,7 +142,9 @@ function base_preprocess_node(&$vars){
 		$vars['theme_hook_suggestions'][] = 'node__intro__gallery';
 		$intro_images = array();
 
-		for($i = 0; $i < count($vars['field_other_images']); $i++){
+		shuffle($vars['field_other_images']);
+		
+		for($i = 0; $i < 5; $i++){
 			$intro_images[] = file_create_url($vars['field_other_images'][$i]['uri']);
 		}
 
