@@ -33,8 +33,8 @@ Drupal.behaviors.init_gallery = {
 					$this.attr('rel', index);
 				   
 				   if(index == 0){
-				   	$this.fadeIn(trans_speed);
-				   	
+				   	$this.css('display', 'list-item');
+				   	$this.animate({'opacity' : 1}, trans_speed);
 				   }
 				});
 
