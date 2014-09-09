@@ -1199,3 +1199,8 @@ html {
 /* line 979, ../sass/style.scss */
 .logged-in #header-container {
   top: 100px; }
+
+/* line 986, ../sass/style.scss */
+.page-user #main-container {
+  max-width: 800px;
+  margin: 80px auto 40px; }
