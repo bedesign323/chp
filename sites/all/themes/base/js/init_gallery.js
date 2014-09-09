@@ -32,10 +32,7 @@ Drupal.behaviors.init_gallery = {
 				   $this.addClass('item-' + index).hide();
 					$this.attr('rel', index);
 				   
-				   if(index == 0){
-				   	$this.css('display', 'list-item');
-				   	$this.animate({'opacity' : 1}, trans_speed);
-				   }
+				   
 				});
 
 
@@ -257,8 +254,9 @@ Drupal.behaviors.init_gallery = {
 			}
 
 			items.imagesLoaded(function(){
+				jQuery('.first.item-0').css('display', 'list-item');
+				jQuery('.first.item-0').animate({'opacity' : 1}, trans_speed);
 				resizeStuff();
-
 			});
 			
 			
