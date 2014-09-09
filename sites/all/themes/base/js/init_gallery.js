@@ -274,7 +274,7 @@ Drupal.behaviors.init_gallery = {
 				clearInterval(slide_show);
 			}
 
-			resizeStuff();
+			//resizeStuff();
 			setClicks();
 			setCount();
 		}
