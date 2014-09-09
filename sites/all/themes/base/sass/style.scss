@@ -704,6 +704,15 @@ html{
   right: 0;
   z-index: 900;
 
+  @include bp(s){
+       position: relative;
+       text-decoration: auto;
+       left: auto;
+       bottom: auto;
+       right: auto;
+       display: block;
+      }
+
   .overlay{
     cursor: pointer;
     position: absolute;
@@ -713,6 +722,9 @@ html{
     right: 0;
     background-color: rgba(darken($page_bg, 30%), .9);
     z-index: 1;
+    @include bp(s){
+       display: none; 
+      }
   }
 
   .details{
@@ -726,6 +738,18 @@ html{
     margin: -200px 0 0 -250px;
     padding: 40px;
     background-color: $page_bg;
+
+    @include bp(s){
+      @include single-box-shadow(0, 0, 0);
+      display: block;
+      position: relative;
+      width: auto;
+      height: auto;
+      margin: 0 0 80px;
+      padding: 10px;
+      top: auto;
+      left: auto;
+    }
     
 
     h1{
@@ -754,7 +778,15 @@ html{
         background-color: #fff;
         color: $color_accent;
       }
+
+      @include bp(s){
+       display: none; 
+      }
     }
+  }
+
+  @include bp(s){
+
   }
 }
 
