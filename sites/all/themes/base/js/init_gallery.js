@@ -14,6 +14,8 @@ Drupal.behaviors.init_gallery = {
 			var win_w = win.width();
 			var details = jQuery('.details-holder');
 
+			var slide_show;
+
 			var settings = Drupal.settings.gallery_settings;
 			var autoplay = settings.autoplay;
 			var hide_controls = settings.hide_controls;
@@ -253,20 +255,17 @@ Drupal.behaviors.init_gallery = {
 				}
 			}
 
-			items.imagesLoaded(function(){
+			jQuery('.first.item-0').imagesLoaded(function(){
 				jQuery('.first.item-0').css('display', 'list-item');
 				jQuery('.first.item-0').animate({'opacity' : 1}, trans_speed);
 				resizeStuff();
+
+				if(autoplay == 1 && win_w > 1080){
+					slide_show = setInterval(nextItem, 4000);
+				}
 			});
 			
 			
-
-			var slide_show;
-
-			if(autoplay == 1 && win_w > 1080){
-				slide_show = setInterval(nextItem, 4000);
-			}
-
 			if(start_thumbs == 1){
 				fadeImage();
 				clearInterval(slide_show);
