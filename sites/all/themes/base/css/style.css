@@ -771,7 +771,7 @@ html {
   margin: 0;
   padding: 80px 20px;
   height: 100%;
-  display: block; }
+  display: none; }
 /* line 528, ../sass/style.scss */
 .gallery .images li .image-group, .gallery .images li .single-image {
   position: relative;
