@@ -753,7 +753,7 @@ html {
 -------------------------------------------------------------- */
 /* line 506, ../sass/style.scss */
 .first.item-0 {
-  opacity: 0; }
+  /*opacity: 0;*/ }
 
 /* line 510, ../sass/style.scss */
 .gallery {

@@ -30,14 +30,12 @@ Drupal.behaviors.init_gallery = {
 			}
 
 			jQuery(items).each(function(index) {
-				   var $this = jQuery(this)
-				   $this.addClass('item-' + index).hide();
-					$this.attr('rel', index);
-				   
-				   
-				});
+			   var $this = jQuery(this)
+			   $this.addClass('item-' + index).hide();
+				$this.attr('rel', index);
 
 
+			});
 
 			jQuery('.image-group img').each(function(index) {
 			   var $this = jQuery(this)
@@ -256,8 +254,9 @@ Drupal.behaviors.init_gallery = {
 			}
 
 			jQuery('.first.item-0').imagesLoaded(function(){
-				jQuery('.first.item-0').css('display', 'list-item');
-				jQuery('.first.item-0').animate({'opacity' : 1}, trans_speed);
+				// jQuery('.first.item-0').css('display', 'list-item');
+				// jQuery('.first.item-0').animate({'opacity' : 1}, trans_speed);
+				jQuery('.first.item-0').fadeIn(trans_speed);
 				resizeStuff();
 
 				if(autoplay == 1 && win_w > 1080){
