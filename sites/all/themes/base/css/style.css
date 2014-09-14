@@ -1142,20 +1142,23 @@ html {
 /* line 915, ../sass/style.scss */
 .region-content .block-block {
   padding: 20px 20px 40px;
-  max-width: 800px;
+  max-width: 550px;
   text-align: justify; }
 /* line 920, ../sass/style.scss */
 .region-content .block-block h2 {
   margin-bottom: 10px;
   text-transform: uppercase;
-  font-size: 1.2em;
+  font-size: .8em;
   letter-spacing: 2px; }
+/* line 927, ../sass/style.scss */
+.region-content .block-block p {
+  font-size: .7em; }
 
-/* line 929, ../sass/style.scss */
+/* line 933, ../sass/style.scss */
 .pane-block-3 {
   text-align: justify; }
 
-/* line 933, ../sass/style.scss */
+/* line 937, ../sass/style.scss */
 .pane-block-4, .pane-block-5 {
   *zoom: 1; }
 /* line 38, ../../../../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
@@ -1163,48 +1166,48 @@ html {
   content: "";
   display: table;
   clear: both; }
-/* line 937, ../sass/style.scss */
+/* line 941, ../sass/style.scss */
 .pane-block-4 li, .pane-block-5 li {
   font-size: .8em;
   float: left;
   width: 33.33%;
   margin-bottom: 10px; }
 @media (max-width: 1080px) {
-  /* line 937, ../sass/style.scss */
+  /* line 941, ../sass/style.scss */
   .pane-block-4 li, .pane-block-5 li {
     width: 100%;
     float: none; } }
 
-/* line 951, ../sass/style.scss */
+/* line 955, ../sass/style.scss */
 .pane-block-5 li {
   width: 50%; }
 @media (max-width: 1080px) {
-  /* line 951, ../sass/style.scss */
+  /* line 955, ../sass/style.scss */
   .pane-block-5 li {
     width: 100%;
     float: none; } }
 
-/* line 961, ../sass/style.scss */
+/* line 965, ../sass/style.scss */
 .pane-node {
   clear: both; }
 
-/* line 967, ../sass/style.scss */
+/* line 971, ../sass/style.scss */
 #admin-list h1 {
   font-size: 2em;
   text-transform: uppercase;
   margin-bottom: 20px; }
-/* line 973, ../sass/style.scss */
+/* line 977, ../sass/style.scss */
 #admin-list h2 {
   font-size: 1em; }
-/* line 977, ../sass/style.scss */
+/* line 981, ../sass/style.scss */
 #admin-list ul {
   margin-bottom: 40px; }
 
-/* line 984, ../sass/style.scss */
+/* line 988, ../sass/style.scss */
 .logged-in #header-container {
   top: 65px; }
 
-/* line 991, ../sass/style.scss */
+/* line 995, ../sass/style.scss */
 .page-user #main-container {
   max-width: 800px;
   margin: 80px auto 40px; }
