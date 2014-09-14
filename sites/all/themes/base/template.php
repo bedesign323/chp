@@ -76,6 +76,11 @@ function base_preprocess_node(&$vars){
 
 	   if($vars['view_mode'] == 'full'){
 		   $images = array();
+
+		   if($vars['field_autoplay_slideshow'][0]['value'] == 1){
+		   	shuffle($vars['field_other_images']);
+		   }
+		   
 		   for($i = 0; $i < count($vars['field_other_images']); $i++){
 
 		     	$image = render_image($vars['field_other_images'][$i], 'gallery_large');
@@ -142,7 +147,7 @@ function base_preprocess_node(&$vars){
 		$vars['theme_hook_suggestions'][] = 'node__intro__gallery';
 		$intro_images = array();
 
-		shuffle($vars['field_other_images']);
+		
 		
 		for($i = 0; $i < 5; $i++){
 			$intro_images[] = file_create_url($vars['field_other_images'][$i]['uri']);
