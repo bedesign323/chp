@@ -77,7 +77,7 @@ function base_preprocess_node(&$vars){
 	   if($vars['view_mode'] == 'full'){
 		   $images = array();
 
-		   if($vars['field_autoplay_slideshow'][0]['value'] == 1){
+		   if($vars['field_randomize_image'][0]['value'] == 1){
 		   	shuffle($vars['field_other_images']);
 		   }
 		   
