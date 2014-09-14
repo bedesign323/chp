@@ -22,11 +22,6 @@
 			<div id="messages"><?php echo $messages; ?></div>
 		<?php endif; ?>
 
-		<?php if(isset($tabs)): ?>
-			<div id="tabs"><?php echo render($tabs); ?></div>
-		<?php endif; ?>
-
-		
 		<div id="content">
 			<?php print render($page['content']); ?>
 		</div>
