@@ -942,7 +942,7 @@ html{
     font-size: .8em;
     float: left;
     width: 33.33%;
-    margin-bottom: 10px;
+    margin-bottom: 0;
 
     @include bp(m){
       width: 100%;

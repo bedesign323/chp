@@ -1171,7 +1171,7 @@ html {
   font-size: .8em;
   float: left;
   width: 33.33%;
-  margin-bottom: 10px; }
+  margin-bottom: 0; }
 @media (max-width: 1080px) {
   /* line 941, ../sass/style.scss */
   .pane-block-4 li, .pane-block-5 li {
