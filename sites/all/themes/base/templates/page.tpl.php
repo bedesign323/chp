@@ -21,7 +21,7 @@
 		<?php if(isset($messages)): ?>
 			<div id="messages"><?php echo $messages; ?></div>
 		<?php endif; ?>
-
+	
 		<div id="content">
 			<?php print render($page['content']); ?>
 		</div>
