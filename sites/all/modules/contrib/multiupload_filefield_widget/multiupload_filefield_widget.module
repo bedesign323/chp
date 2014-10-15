@@ -4,8 +4,7 @@
  * Module creating a multiple file upload widget
  */
 
-$mfw_path = drupal_get_path('module', 'multiupload_filefield_widget');
-require_once $mfw_path . '/multiupload_filefield_widget.field.inc';
+module_load_include('inc', 'multiupload_filefield_widget', 'multiupload_filefield_widget.field');
 
 /**
  * Implements hook_element_info().

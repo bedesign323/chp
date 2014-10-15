@@ -185,7 +185,7 @@ function mfw_field_widget_process_multiple($element, &$form_state, $form) {
       $element[] = $element[$element['#file_upload_delta']];
     }
   }
-  $element_children = element_children($element);
+  $element_children = element_children($element, FALSE);
   $count = count($element_children);
 
   foreach ($element_children as $delta => $key) {
