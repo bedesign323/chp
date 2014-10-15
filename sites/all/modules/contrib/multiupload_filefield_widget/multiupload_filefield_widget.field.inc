@@ -68,6 +68,8 @@ function multiupload_filefield_widget_field_widget_form(&$form, &$form_state, $f
     $elements = array($element);
   }
   else {
+  
+  	
     // If there are multiple values, add an element for each existing one.
     foreach ($items as $item) {
       $elements[$delta] = $element;
