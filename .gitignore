@@ -1,8 +1,5 @@
 # Ignore configuration files that may contain sensitive information.
 sites/*/settings*.php
-private
-private/*
-.htaccess
 
 # Ignore paths that contain user-generated content.
 sites/*/files
