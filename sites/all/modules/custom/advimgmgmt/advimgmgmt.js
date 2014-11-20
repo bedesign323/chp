@@ -295,6 +295,12 @@ $('.ACTIVE-FILED .CONFIRM-Box .Changed-Mind').live("click",function(){
 //call function by setintervel
 setInterval(function(){ //one second
 	each_functions();	
+
+	var image_count = $('#mvw-field_other_images .ui-widget-content').length;
+	//console.log("asdfsdfsd");
+	$('.Notes').html(image_count + ' images');
+
+
 }, 1000);
 
 setInterval(function(){ //half second
@@ -358,6 +364,7 @@ function update_weight(){
 			$(this).find('.mvw-weight-delta-order').val(indexnumber);
 		});		
 	});
+
 }
 //END:function for update weight field value
 
