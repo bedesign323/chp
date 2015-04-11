@@ -65,6 +65,7 @@ li.opened span.nolink{color: $color_main;}
   bottom: -50px;
   width: 100%;
   text-align: center;
+  z-index: 800; 
 
   span{ 
     @include transition;
@@ -78,6 +79,7 @@ li.opened span.nolink{color: $color_main;}
 
   &.active{
     bottom: 10px;
+    z-index: 800;
   }
   
   @include bp(m){
@@ -109,6 +111,8 @@ li.opened span.nolink{color: $color_main;}
   letter-spacing: 1px;
   float: left;
   margin-right: 10px;
+  position: relative;
+  z-index: 100;
 
   a{
     background-color: $color_accent;
@@ -145,6 +149,7 @@ li.opened span.nolink{color: $color_main;}
   @include bp(m){
     float: none;
     width: 100%;
+    clear: both;
   }
 
   @include bp(l){
@@ -164,6 +169,7 @@ li.opened span.nolink{color: $color_main;}
   text-transform: uppercase;
   letter-spacing: 0;
   background-color: rgba(darken($page_bg, 5%), .9);
+  position: relative;
 
 	ul{}
 
@@ -187,13 +193,17 @@ li.opened span.nolink{color: $color_main;}
 
     ul{
       text-align: center !important;
-      padding-top: 50px;
+      position: relative;
+      width: 100%;
+      clear: both;
     }
 
     li{
       display: block;
       margin-right: 0;
       line-height: normal;
+      position: relative;
+      width: 100%;
 
       @include bp(m){
         width: 100%;
@@ -203,6 +213,8 @@ li.opened span.nolink{color: $color_main;}
         display: block;
         padding: 10px 0;
         border-bottom: $page_bg solid 2px;
+        position: relative;
+        width: 100%;
       }
     }
   }
@@ -219,6 +231,7 @@ li.opened span.nolink{color: $color_main;}
 
   @include bp(m){
     display: none;
+    clear: both;
   }
 }
 
@@ -306,6 +319,7 @@ html{
     @include pie-clearfix;
     background-color: rgba(darken($page_bg, 50%), .9);
     color: $page_bg;
+
   }
 
   .logo-big{
@@ -361,6 +375,7 @@ html{
     font-size: .7em;
     text-transform: uppercase;
     letter-spacing: 2px;
+    @include bp(m){padding-bottom: 80px;}
   }
 
   @include bp(m){
