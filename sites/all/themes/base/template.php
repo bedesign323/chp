@@ -160,7 +160,7 @@ function base_preprocess_node(&$vars){
 		//kpr($intro_images);
 	}
 
-	if($vars['vid'] == 13){
+	if($vars['vid'] == 71){
 		$vars['theme_hook_suggestions'][] = 'node__grid';
 		$images = array();
 
