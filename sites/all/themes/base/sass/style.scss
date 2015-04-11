@@ -58,6 +58,34 @@ ul.menu li{
 li a.active,
 li.opened span.nolink{color: $color_main;}
 
+#back-to-top{
+  @include transition;
+  display: none;
+  position: fixed;
+  bottom: -50px;
+  width: 100%;
+  text-align: center;
+
+  span{ 
+    @include transition;
+    padding: 10px;
+    background-color: $color_accent;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 0;
+    cursor: pointer;
+  }
+
+  &.active{
+    bottom: 10px;
+  }
+  
+  @include bp(m){
+    display: block;
+  }
+
+}
+
 /* Layout
 -------------------------------------------------------------- */
 #header-container{
@@ -72,6 +100,7 @@ li.opened span.nolink{color: $color_main;}
 
   @include bp(m){
     padding: 0;
+    position: relative;
   }
 }
 
@@ -102,6 +131,10 @@ li.opened span.nolink{color: $color_main;}
   @include bp(s){
     font-size: .7em;
     letter-spacing: 1px;
+
+    a{
+      padding: 0 5px;
+    }
   }
 }
 
@@ -111,6 +144,7 @@ li.opened span.nolink{color: $color_main;}
 
   @include bp(m){
     float: none;
+    width: 100%;
   }
 
   @include bp(l){
@@ -161,6 +195,10 @@ li.opened span.nolink{color: $color_main;}
       margin-right: 0;
       line-height: normal;
 
+      @include bp(m){
+        width: 100%;
+      }
+
       a{
         display: block;
         padding: 10px 0;
@@ -187,7 +225,7 @@ li.opened span.nolink{color: $color_main;}
 .menu-toggle{
   @include transition;
   display: none;
-  position: fixed;
+  position: absolute;
   z-index: 900;
   top: 0;
   right: 20px;

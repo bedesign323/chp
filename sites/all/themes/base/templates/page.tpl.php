@@ -46,3 +46,5 @@
 		</div>
 	</div>
 </div>
+
+<div id="back-to-top"><div><span class="icon-arrow-up"></span></div></div>

@@ -10,6 +10,23 @@ Drupal.behaviors.init = {
 				return false;
 			});
 
+			var topTrigger = $('#back-to-top');
+
+			topTrigger.click(function(){
+			    $("html, body").animate({ scrollTop: 0 }, 800);
+			    return false;
+			});
+
+			$(window).scroll(function(event) {
+				var top = $(window).scrollTop();
+
+				if(top > 200){
+					topTrigger.addClass('active');
+				}else{
+					topTrigger.removeClass('active');
+				}
+			});
+
 
  			// MASONRY!!!
  			// ===================================
