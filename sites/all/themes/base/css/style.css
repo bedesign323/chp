@@ -1270,3 +1270,36 @@ html {
 .page-user #main-container {
   max-width: 800px;
   margin: 80px auto 40px; }
+  
+  
+  
+  
+  /* ADDED! */
+ .pane-block-4 ul, .pane-block-5 ul{
+	 display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 270px; /* account for borders */
+  width: 600px;
+	 }
+
+.pane-block-5 ul{
+	width: 700px;
+	}
+ 
+  .pane-block-4 li, .pane-block-5 li{
+	  float: none;
+	  width: 50%;
+	  margin-bottom: 5px;
+	  width: 300px;  
+  }
+  
+  
+  .pane-block-5 li{
+	  width: 350px;  
+	  }
+
+
+.copy a{
+	color: #fff;
+}

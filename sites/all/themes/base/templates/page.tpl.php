@@ -42,7 +42,7 @@
 			<div class="footer-right"><?php print render($page['footer_right']); ?></div>
 		</div>
 		<div class="copy">
-			&copy; <?php echo date('Y') . " Christian Horan Photography, Inc. — Don't Steal. It's not nice." ?>
+			&copy; <?php echo date('Y') . " Christian Horan Photography, Inc." ?> &mdash; Site Design: <a href="http://thronecreative.com" target="_blank">THRONE CREATIVE</a>
 		</div>
 	</div>
 </div>
